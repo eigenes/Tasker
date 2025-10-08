@@ -39,11 +39,11 @@ while taskerActive:
         with open("tasks.txt", "w") as file:
             file.writelines(lines)
         with open("tasks.txt", "r") as file:
-            tasks = []                       # Eine leere Liste für die Aufgaben
-            for line in file:                # Gehe jede Zeile durch
-                parts = line.split('.', 1)   # Teile die Zeile am ersten Punkt
-                if len(parts) > 1:           # Nur Zeilen, die einen Punkt haben
-                    tasks.append(parts[1].strip())  # Den Text nach dem Punkt speichern
+            tasks = []                       
+            for line in file:                
+                parts = line.split('.', 1)   
+                if len(parts) > 1:           
+                    tasks.append(parts[1].strip())  
         with open("tasks.txt", "w") as file:
             for i, task in enumerate(tasks, start=1):
                 file.write(f"{i}. {task.strip()}\n")
